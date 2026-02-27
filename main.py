@@ -34,7 +34,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Отдача статики (фронтенд)
 STATIC_DIR.mkdir(exist_ok=True)
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
