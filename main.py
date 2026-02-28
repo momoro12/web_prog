@@ -56,9 +56,6 @@ def write_items(items: List[Item]) -> None:
 
 @app.get("/", response_class=HTMLResponse)
 def root():
-    """
-    Главная страница сразу отдаёт наш фронтенд.
-    """
     if not INDEX_FILE.exists():
         raise HTTPException(status_code=500, detail="index.html не найден")
     return INDEX_FILE.read_text(encoding="utf-8")
